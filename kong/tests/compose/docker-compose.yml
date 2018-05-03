@@ -22,7 +22,7 @@ services:
       - 127.0.0.1
 
   nginx-lb:
-    build: nginx/
+    build: ${COMPOSE_DIRECTORY_PATH}/nginx/
     depends_on:
       consul:
         condition: service_healthy
@@ -55,7 +55,7 @@ services:
       retries: 5
 
   kong:
-    build: kong_$KONG_VERSION/
+    build: ${COMPOSE_DIRECTORY_PATH}/kong_$KONG_VERSION/
     depends_on:
       kong-database:
         condition: service_healthy

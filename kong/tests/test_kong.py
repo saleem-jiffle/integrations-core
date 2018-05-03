@@ -82,9 +82,12 @@ def kong_cluster():
     """
     Start a kong cluster
     """
+    compose_directory = os.path.join(HERE, 'compose')
+    os.environ['COMPOSE_DIRECTORY_PATH'] = compose_directory
+
     args = [
         "docker-compose",
-        "-f", os.path.join(HERE, 'compose', 'docker-compose.yml')
+        "-f", os.path.join(compose_directory, 'docker-compose.yml')
     ]
     subprocess.check_call(args + ["up", "-d"])
     if not wait_for_cluster():
