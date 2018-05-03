@@ -25,7 +25,7 @@ def get_requirements(fpath):
 
 setup(
     name='datadog-kong',
-    version=version,
+    version=ABOUT["__version__"],
     description='The Kong check',
     long_description=long_description,
     keywords='datadog agent kong check',

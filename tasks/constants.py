@@ -26,6 +26,7 @@ AGENT_BASED_INTEGRATIONS = [
     'haproxy',
     'iis',
     'istio',
+    'kong',
     'kube_proxy',
     'kubelet',
     'lighttpd',
